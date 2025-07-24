@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://btbu41icnlnq5"]
+
+[ext_resource type="Script" uid="uid://ctl4fd46p18kl" path="res://Assets/Scripts/area_exit.gd" id="1_o2ym5"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rtouj"]
+load_path = "res://.godot/imported/portal.png-90664bc9fe17788cb41bd2481cacce24.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rtouj"]
+
+[node name="AreaExit" type="Area2D" node_paths=PackedStringArray("sprite") groups=["area_exits"]]
+collision_layer = 65536
+script = ExtResource("1_o2ym5")
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -10
+texture = SubResource("CompressedTexture2D_rtouj")
+region_enabled = true
+region_rect = Rect2(0, 0, 22, 22)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rtouj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
