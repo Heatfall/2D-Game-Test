@@ -9,4 +9,4 @@ This branch will contain my Godot progress as an aspiring game dev
 ### Current Task
 
 - [x] Add a parallax background
-- [] Add an attack animation
+- [ ] Add an attack animation
